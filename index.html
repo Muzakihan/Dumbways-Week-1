@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Layout</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      width: 350px;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .card h3 {
+      font-size: 1.2em;
+      margin: 15px 0;
+    }
+
+    .card button {
+      background-color: #000000;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 1em;
+      margin: 10px 0 20px 0;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .card button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <body>
+    <div class="card-container">
+      <div class="card">
+        <img src="./Day 1/assets/image/banner.png" alt="Image 1" />
+        <h3>Dumbways Day 1</h3>
+        <a href="./Day 1/index.html">
+          <button>Lihat Detail..</button>
+        </a>
+      </div>
+      <div class="card">
+        <img src="./Day 2/assets/image/banner2.png" alt="Image 2" />
+        <h3>Dumbways Day 2</h3>
+        <a href="./Day 2/index.html">
+          <button>Lihat Detail..</button>
+        </a>
+      </div>
+      <div class="card">
+        <img src="./Day 3/assets/image/banner3.png" alt="Image 3" />
+        <h3>Dumbways Day 3</h3>
+        <a href="./Day 3/index.html">
+          <button>Lihat Detail..</button>
+        </a>
+      </div>
+      <div class="card">
+        <img src="./Day 4/assets/image/banner4.png" alt="Image 4" />
+        <h3>Dumbways Day 4</h3>
+        <a href="./Day 4/index.html">
+          <button>Lihat Detail..</button>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
