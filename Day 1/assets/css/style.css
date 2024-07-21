@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+}
+body{
+    background-color: var(--secondary-color);
+    color: #333;
+    width: 100%;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+}
+.card-container{
+    width: 40%;
+    margin: 5rem auto;
+}
+.card__header-text p{
+    text-align:justify;
+    width: 100%;
+    margin-top: 10px;
+}
+.card__cta-button{
+    padding: 10px 0;
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+}
+.card__cta-button a {
+    text-decoration: none;
+    text-align: center;
+    width: 200px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.card__cta-button .contact-link {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+}
+
+.card__cta-button .download-link {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+.card__icon-social{
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
+}
+.card__icon-social i{
+    font-size: 35px;
+}
+.card__profile {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card__profile-image {
+    width: 100%;
+}
+
+.card__profile-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card__profile-detail {
+    padding: 16px;
+    text-align: center;
+}

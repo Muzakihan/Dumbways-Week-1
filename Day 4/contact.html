@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <title>Project</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar__right">
+        <div class="navbar__logo">
+          <img src="./assets/image/logo.png" alt="Logo" />
+        </div>
+        <div class="navbar__links">
+          <a href="index.html" class="navbar__link">Home</a>
+          <a href="contact.html" class="navbar__link">Contact</a>
+        </div>
+      </div>
+      <div class="navbar__left">
+        <div class="navbar__button">
+          <button class="navbar__button__contact">Contact Me</button>
+        </div>
+      </div>
+    </nav>
+    <div class="form">
+      <h2 class="form__title">ADD MY PROJECT</h2>
+      <form class="form__fields" id="projectForm">
+        <div class="form__field">
+          <label for="nameInput" class="form__label">Project Name</label>
+          <input
+            type="text"
+            id="nameInput"
+            name="name"
+            class="form__input"
+            required
+          />
+        </div>
+        <div class="form__field2">
+          <div class="form__field-date">
+            <label for="startDateInput" class="form__label">Start Date</label>
+            <input
+              type="date"
+              id="startDateInput"
+              name="startDate"
+              class="form__input"
+              required
+            />
+          </div>
+          <div class="form__field-date">
+            <label for="endDateInput" class="form__label">End Date</label>
+            <input
+              type="date"
+              id="endDateInput"
+              name="endDate"
+              class="form__input"
+              required
+            />
+          </div>
+        </div>
+        <div class="form__field">
+          <label for="descriptionInput" class="form__label">Description</label>
+          <textarea
+            id="descriptionInput"
+            name="description"
+            class="form__textarea"
+            rows="4"
+          ></textarea>
+        </div>
+        <div class="form__field">
+          <div class="form__field-option">
+            <div class="field__option-field">
+              <input
+                type="checkbox"
+                id="nodeJs"
+                name="option"
+                value="Node Js"
+              />
+              <label for="nodeJs">Node Js</label>
+            </div>
+            <div class="field__option-field">
+              <input
+                type="checkbox"
+                id="reactJs"
+                name="option"
+                value="React Js"
+              />
+              <label for="reactJs">React Js</label>
+            </div>
+            <div class="field__option-field">
+              <input
+                type="checkbox"
+                id="nextJs"
+                name="option"
+                value="Next Js"
+              />
+              <label for="nextJs">Next Js</label>
+            </div>
+            <div class="field__option-field">
+              <input
+                type="checkbox"
+                id="typescript"
+                name="option"
+                value="TypeScript"
+              />
+              <label for="typescript">TypeScript</label>
+            </div>
+          </div>
+        </div>
+        <div id="techIcons"></div>
+        <div class="form__field">
+          <input
+            type="file"
+            id="imageInput"
+            name="image"
+            accept="image/*"
+            required
+          />
+        </div>
+        <button type="submit" class="form__button">Submit</button>
+      </form>
+    </div>
+    <div id="cardProject"></div>
+    <script>
+      let dataBlog = [];
+
+      document
+        .getElementById("projectForm")
+        .addEventListener("submit", addBlog);
+      document.querySelectorAll('input[name="option"]').forEach((checkbox) => {
+        checkbox.addEventListener("change", updateTechIcons);
+      });
+
+      function addBlog(event) {
+        event.preventDefault();
+
+        let title = document.getElementById("nameInput").value;
+        let startDate = document.getElementById("startDateInput").value;
+        let endDate = document.getElementById("endDateInput").value;
+        let description = document.getElementById("descriptionInput").value;
+        let options = Array.from(
+          document.querySelectorAll('input[name="option"]:checked')
+        ).map((checkbox) => checkbox.value);
+
+        let imageInput = document.getElementById("imageInput");
+        let imageFile = imageInput.files[0];
+        let imageUrl = "";
+
+        if (imageFile) {
+          imageUrl = URL.createObjectURL(imageFile);
+        }
+
+        let blog = {
+          title,
+          startDate,
+          endDate,
+          description,
+          options,
+          image: imageUrl,
+        };
+
+        dataBlog.push(blog);
+
+        renderBlog();
+        document.getElementById("projectForm").reset();
+        document.getElementById("techIcons").innerHTML = "";
+      }
+
+      function renderBlog() {
+        const contents = document.getElementById("cardProject");
+        contents.innerHTML = "";
+
+        dataBlog.forEach((blog, index) => {
+          contents.innerHTML += `
+                <div class="cardProject-container">
+                  <img class="cardProject__image" src="${blog.image}" alt="Blog Image" />
+                  <div class="cardProject__content">
+                    <h1><a href="cardProject__blog-detail.html" target="_blank">${blog.title}</a></h1>
+                    <div class="cardProject__duration">${blog.startDate} to ${blog.endDate}</div>
+                    <p class="cardProject__description">${blog.description}</p>
+                    <div class="cardProject__tech-icons">
+                      ${blog.options.map((option) => getTechIcon(option)).join("")}
+                    </div>
+                  </div>
+                  <div class="cardProject__footer">
+            
+                      <button class="button button-edit" onclick="editBlog(${index})">Edit</button>
+                      <button class="button button-delete" onclick="deleteBlog(${index})">Delete</button>
+                  </div>
+                </div>`;
+        });
+      }
+
+      function deleteBlog(index) {
+        dataBlog.splice(index, 1);
+        renderBlog();
+      }
+
+      function editBlog(index) {
+        alert("Edit functionality not implemented yet.");
+      }
+
+      function updateTechIcons() {
+        const techIcons = {
+          "Node Js": '<i class="fab fa-node-js" title="Node Js"></i>',
+          "React Js": '<i class="fab fa-react" title="React Js"></i>',
+          "Next Js":
+            '<img src="./assets/image/nextjs-icon.png" alt="Next Js" title="Next Js" />',
+          TypeScript:
+            '<img src="./assets/image/typescript-icon.png" alt="TypeScript" title="TypeScript" />',
+        };
+
+        const selectedOptions = Array.from(
+          document.querySelectorAll('input[name="option"]:checked')
+        ).map((checkbox) => checkbox.value);
+
+        const techIconsContainer = document.getElementById("techIcons");
+        techIconsContainer.innerHTML = selectedOptions
+          .map((option) => techIcons[option] || "")
+          .join("");
+      }
+
+      function getTechIcon(option) {
+        const techIcons = {
+          "Node Js": '<i class="fab fa-node-js"></i>',
+          "React Js": '<i class="fab fa-react"></i>',
+          "Next Js": '<i class="fa-brands fa-js"></i>',
+          TypeScript: '<i class="fa-brands fa-js"></i>',
+        };
+        return techIcons[option] || "";
+      }
+    </script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+          <label for="nameinput">Name</label>
+          <input id="nameinput" type="text" required placeholder="Please, input your name" />
+        </div>
+      
+        <div>
+          <label for="emailinput">Email</label>
+          <input id="emailinput" type="email" required placeholder="Please, input your email" />
+        </div>
+      
+        <div>
+          <label for="phoneinput">Phone Number</label>
+          <input id="phoneinput" type="tel" placeholder="Your number" />
+        </div>
+      
+        <div>
+          <label for="position">Position</label>
+          <select id="position">
+            <option hidden>Select option</option>
+            <option value="point 1">Frontend Developer</option>
+            <option value="point 2">Fullstack Developer</option>
+            <option value="point 3">Backend Developer</option>
+          </select>
+        </div>
+      
+        <div>
+          <label for="messageinput">Your message</label>
+          <textarea id="messageinput"></textarea>
+        </div>
+      
+        <div>
+          <button type="submit" onclick="getData(event)">Submit</button>
+        </div>
+      </form>
+</body>
+<script>
+function getData(event) {
+event.preventDefault();
+  let name = document.getElementById("nameinput").value;
+  document.getElementById("nameinput").value =  "";
+  let email = document.getElementById("emailinput").value;
+  document.getElementById("emailinput").value =  "";
+  let phone = document.getElementById("phoneinput").value;
+  document.getElementById("phoneinput").value =  "";
+  let position = document.getElementById("position").value;
+  document.getElementById("position").value =  "";
+  let message = document.getElementById("messageinput").value;
+  document.getElementById("messageinput").value =  "";
+
+  if (name === "") {
+    return alert("Tolong isikan nama Anda");
+  } else if (email === "") {
+    return alert("Tolong isikan email Anda");
+  
+  } else if (position === "select option") {
+    return alert("Tolong isikan posisi Anda");
+  }
+
+  console.log(name);
+  console.log(email);
+  console.log(phone);
+  console.log(position);
+  console.log(message);
+}
+
+</script>
+</html>

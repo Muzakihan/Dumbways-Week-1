@@ -1,0 +1,322 @@
+/* Import font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* Variabel Warna */
+:root {
+    --bg-color: #f0f0f0;
+    --border-color: #ccc;
+    --text-color: #333;
+    --primary-color: #ffaa00;
+    --primary-color-hover: #f8b735;
+    --button-primary-color: #000000;
+    --button-primary-text-color: #ffffff;  
+    --button-secondary-color: #ffffff;
+    --button-secondary-text-color: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    width: 100%;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-color);
+    padding: 20px 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__left {
+    display: flex;
+    align-items: center;
+}
+
+/* Styling untuk logo navbar */
+.navbar__logo img {
+    height: 40px; /* Sesuaikan ukuran logo */
+}
+
+/* Styling untuk link di navbar */
+.navbar__links {
+    margin-left: 20px;
+}
+
+.navbar__link {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.navbar__link:hover {
+    color: var(--primary-color-hover); /* Ubah warna saat hover */
+}
+
+/* Styling untuk tombol di navbar */
+.navbar__button button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navbar__button button:hover {
+    background-color: var(--primary-color-hover); /* Ubah warna saat hover */
+}
+
+/* Styling untuk container gambar dan teks */
+.card-image {
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    margin: 80px auto;
+    position: relative;
+}
+.card-image_profile  {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-image_profile-image img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-image_profile-detail{
+    padding: 16px;
+    text-align: center;
+}
+
+/* Styling untuk teks dan tombol hello */
+.card-image__hello {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-image__hello__text {
+    text-align: left;
+}
+
+.card-image__hello__text h4,
+.card-image__hello__text p {
+    font-family: "Roboto Mono", monospace;
+}
+
+.card-image__hello__emoji {
+    font-size: 35px;
+}
+
+/* Styling untuk container teks dan project */
+.card-image__detail-project{
+    width: 100%;
+}
+.card-image__cta-button{
+    padding: 10px 0;
+    gap: 10px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: start;
+}
+.card-image__cta-button a {
+    text-decoration: none;
+    text-align: center;
+    width: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+.card-image__cta-button .contact-link {
+    background-color: var(--button-primary-color);
+    color: var(--button-primary-text-color);
+    border: none;
+}
+
+.card-image__cta-button .download-link {
+    background-color: var(--button-secondary-color);
+    color: var(--button-secondary-text-color);
+}
+.card-image__icon-social{
+    margin: 10px 0;
+    display: flex;
+    gap: 20px;
+    justify-content: start;
+    margin-left: 20px;
+}
+.card-image__icon-social i{
+    font-size: 30px;
+}
+.card-image__container-text,
+.card-image__container-project {
+    margin: 10px 20px;
+    text-align: left;
+}
+
+.card-image__container-text h2,
+.card-image__container-project h2 {
+    font-family: "Roboto Mono", monospace;
+}
+
+.card-image__container-text p {
+    font-family: "Roboto Mono", monospace;
+    margin: 10px 0px;
+}
+
+/* Styling untuk container utama dan konten kanan-kiri */
+.card-image__main-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0px;
+}
+
+.card-image__right-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-image__right-content i {
+    font-size: 35px;
+    margin: 10px 0;
+}
+
+.card-image__left-content {
+    text-align: left;
+    gap: 2px;
+    flex-direction: column;
+}
+.form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form__title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form__fields {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__field {
+    margin-bottom: 15px;
+}
+
+.form__label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form__input,
+.form__select,
+.form__textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid var(--button-secondary-color);
+    border-radius: 4px;
+}
+
+.form__textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.form__button {
+    background-color: var(--button-primary-color);
+    color: var(--button-primary-text-color);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-sizing: border-box;
+    float: right;
+    font-size: 16px;
+    width: 200px;
+}
+
+
+.circle-sketch-highlight{
+    position:relative;
+  }
+  
+  .circle-sketch-highlight:before{
+    content:"";
+    z-index:-1;
+    left:-0.5em;
+    top:-0.1em;
+    border-width:2px;
+    border-style:solid;
+    border-color:red;
+    position:absolute;
+    border-right-color:transparent;
+    width:100%;
+    height:1em;
+    transform:rotate(2deg);
+    opacity:0.7;
+    border-radius:50%;
+    padding:0.1em 0.25em;
+  }
+  
+  .circle-sketch-highlight:after{
+    content:"";
+    z-index:-1;
+    left:-0.5em;
+    top:0.1em;
+    padding:0.1em 0.25em;
+    border-width:2px;
+    border-style:solid;
+    border-color:red;
+    border-left-color:transparent;
+    border-top-color:transparent;
+    position:absolute;
+    width:100%;
+    height:1em;
+    transform:rotate(-1deg);
+    opacity:0.7;
+    border-radius:50%;
+  }

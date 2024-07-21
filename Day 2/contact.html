@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <title>Contact Page</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar__right">
+        <div class="navbar__logo">
+          <img src="./assets/image/logo.png" alt="Logo" />
+        </div>
+        <div class="navbar__links">
+          <a href="index.html" class="navbar__link">Home</a>
+          <a href="contact.html" class="navbar__link">Contact</a>
+        </div>
+      </div>
+      <div class="navbar__left">
+        <div class="navbar__button">
+          <button class="navbar__button__contact">Contact Me</button>
+        </div>
+      </div>
+    </nav>
+    <div class="form">
+      <h2 class="form__title">Form Submission</h2>
+      <form class="form__fields" id="contactForm" method="post">
+        <div class="form__field">
+          <label for="name" class="form__label">Name</label>
+          <input
+            type="text"
+            id="nameInput"
+            name="name"
+            class="form__input"
+            required
+          />
+        </div>
+        <div class="form__field">
+          <label for="email" class="form__label">Email</label>
+          <input
+            type="email"
+            id="emailInput"
+            name="email"
+            class="form__input"
+            required
+          />
+        </div>
+        <div class="form__field">
+          <label for="no_telp" class="form__label">Phone Number</label>
+          <input
+            type="tel"
+            id="no_telpInput"
+            name="no_telp"
+            class="form__input"
+            required
+          />
+        </div>
+        <div class="form__field">
+          <label for="position" class="form__label">Subject</label>
+          <select id="positionInput" name="position" class="form__select" required>
+            <option value="" hidden>Select Position</option>
+            <option value="hire">Hire</option>
+            <option value="project">Project</option>
+          </select>
+        </div>
+        <div class="form__field">
+          <label for="address" class="form__label">Your Message</label>
+          <textarea
+            id="addressInput"
+            name="address"
+            class="form__textarea"
+            rows="4"
+          ></textarea>
+        </div>
+        <button type="submit" class="form__button">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
