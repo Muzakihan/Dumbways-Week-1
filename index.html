@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Column Layout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme theme--light">
+    <div class="theme-toggle">
+        <button class="theme-toggle__button" onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+    <div class="container">
+        <div class="container__left-column">
+            <div class="container__sticky-content">
+                <div class="header__content">
+                    <span>Introduction</span>
+                    <h1>Repository Project</h1>
+                    <h1 class="secondary__text-content"><u>Dumbways</u></h1>
+                </div>
+                <div class="footer__content">
+                    <div class="link__content">
+                        <button>
+                            <a href="https://github.com/dumbways/Dumbways-Repository-Project" target="_blank">Repository Project</a>
+                        </button>
+                        <button>
+                            <a href="https://github.com/dumbways/Dumbways-Repository-Project/blob/main/README.md" target="_blank">README.md</a>
+                        </button>
+                    </div>
+                    <div class="main__content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto asperiores blanditiis architecto expedita! A nobis cumque placeat minima fugiat perferendis inventore consequatur, incidunt exercitationem molestias beatae commodi est sit fugit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quae ullam praesentium, est culpa error accusamus sed odit laudantium excepturi. Dolores culpa veniam debitis ad eos quidem, dolor dolorum minus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container__right-column">
+            <div class="container__content">
+                <div class="content">
+                    <div class="content__video">
+                        <video autoplay loop muted>
+                            <source src="./assets/image/video-01.mp4" type="video/mp4" >
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="content__text">
+                        <h1 class="content__title"><u>PROJECT WEEK 01</u></h1>
+                        <div class="content__links">
+                            <span>View Project</span>
+                            <a href="./Utils Week-1/index.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container__content">
+                <div class="content">
+                    <div class="content__video">
+                        <video autoplay loop muted>
+                            <source src="./assets/image/video-02.mp4" type="video/mp4" >
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="content__text">
+                        <h1 class="content__title"><u>PROJECT WEEK 02</u></h1>
+                        <div class="content__links">
+                            <span>View Project</span>
+                            <a href="./Utils Week-2/index.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container__content">
+                <div class="content">
+                    <div class="content__video">
+                        <video autoplay loop muted>
+                            <source src="./assets/image/video-03.mp4" type="video/mp4" >
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="content__text">
+                        <h1 class="content__title"><u>PROJECT WEEK 03</u></h1>
+                        <div class="content__links">
+                            <span>View Project</span>
+                            <a href="./Utils Week-3/index.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container__content">
+                <div class="content">
+                    <div class="content__video">
+                        <video autoplay loop muted>
+                            <source src="./assets/image/video-04.mp4" type="video/mp4" >
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="content__text">
+                        <h1 class="content__title"><u>PROJECT WEEK 04</u></h1>
+                        <div class="content__links">
+                            <span>View Project</span>
+                            <a href="./Utils Week-4/index.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('theme--dark');
+            document.body.classList.toggle('theme--light');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+}
+body {
+  background-color: var(--secondary-color);
+  color: #333;
+  width: 100%;
+  margin: auto;
+  font-family: "Roboto", sans-serif;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-color);
+  padding: 20px 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-right: 10px;
+}
+
+.navbar__left {
+  display: flex;
+  align-items: center;
+}
+.navbar__left {
+  display: none;
+}
+
+/* Styling untuk logo navbar */
+.navbar__logo img {
+  height: 40px; /* Sesuaikan ukuran logo */
+}
+
+/* Styling untuk link di navbar */
+.navbar__links {
+  margin-left: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__link {
+  text-decoration: none;
+  color: var(--text-color);
+  margin-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.navbar__link:hover {
+  color: var(--primary-color-hover); /* Ubah warna saat hover */
+}
+
+/* Styling untuk tombol di navbar */
+.navbar__links button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  float: right;
+}
+
+.navbar__button button:hover {
+  background-color: var(--primary-color-hover); /* Ubah warna saat hover */
+}
+.navbar__links.show,
+.navbar__button.show {
+  display: block !important;
+}
+
+.card-container {
+  width: 40%;
+  margin: 5rem auto;
+}
+.card__header-text p {
+  text-align: justify;
+  width: 100%;
+  margin-top: 10px;
+}
+.card__cta-button {
+  padding: 10px 0;
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+}
+.card__cta-button a {
+  text-decoration: none;
+  text-align: center;
+  width: 200px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.card__cta-button .contact-link {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+}
+
+.card__cta-button .download-link {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+.card__icon-social {
+  margin: auto;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+.card__icon-social i {
+  font-size: 35px;
+}
+.card__profile {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card__profile-image {
+  width: 100%;
+}
+
+.card__profile-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card__profile-detail {
+  padding: 16px;
+  text-align: center;
+}
+
+/* Tablet Styles */
+@media (max-width: 600px) {
+  .card-container {
+    width: 80%;
+    margin: 5rem auto;
+  }
+  .card__icon-social i {
+    font-size: 25px;
+  }
+  .card__profile {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar__left {
+    display: block;
+  }
+  .navbar__links,
+  .navbar__button button {
+    display: none;
+  }
+
+  .navbar__links.show,
+  .navbar__button button.show {
+    display: block;
+    position: absolute;
+    top: 80px;
+    margin: 0;
+    width: 100%;
+    right: 0px;
+    background-color: white;
+    height: 30%;
+    padding: 20px 0;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 50px -12px;
+  }
+  .navigation-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0 2%;
+  }
+  .navigation-links a{
+    padding: 10px;
+    text-align: center;
+    margin: 0px;
+  }
+  .navbar__button__contact {
+    float: left;
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+    margin: 0 10%;
+    display: block;
+  }
+}

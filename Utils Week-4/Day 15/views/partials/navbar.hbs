@@ -1,0 +1,26 @@
+<nav class="navbar-content">
+    <div class="navbar__right">
+        <div class="navbar__logo">
+            <img src="/image/logo.png" alt="Logo">
+        </div>
+        <div class="navbar__links">
+            <div class="navigation-links">
+                <a href="/" class="navbar__link">Home</a>
+                <a href="/add-project" class="navbar__link">My Project</a>
+
+                {{#if user}}
+                    <a href="/logout" class="navbar__link">Logout</a>
+                {{else}}
+                    <a href="/login" class="navbar__link">Login</a>
+                    <a href="/register" class="navbar__link">Register</a>
+                {{/if}}
+            </div>
+            <a href="/contact"><button class="navbar__button__contact">Contact Me</button></a>
+        </div>
+    </div>
+    <div class="navbar__left">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</nav>

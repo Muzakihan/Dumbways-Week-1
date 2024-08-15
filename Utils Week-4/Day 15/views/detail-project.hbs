@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    {{> navbar}}
+    <div class="container mt-5">
+        <h1 class="mb-4">Project Detail</h1>
+
+        {{#if project}}
+            <div class="card">
+                {{#if project.image}}
+                    <img src="{{project.image}}" class="card-img-top" alt="Project Image">
+                {{/if}}
+                <div class="card-body">
+                    <h2 class="card-title">{{project.name}}</h2>
+    <p class="card-text"><strong>Author:</strong> {{project.username}}</p> <!-- Tampilkan username -->
+
+    <p class="card-text"><strong>Start Date:</strong> {{project.start_date}}</p>
+    <p class="card-text"><strong>End Date:</strong> {{project.end_date}}</p>
+    <p class="card-text"><strong>Description:</strong> {{project.description}}</p>
+    <p class="card-text">Technologies: {{this.technologies}}</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <a href="/update-project/{{project.id}}" class="btn btn-warning">Update Project</a>
+                    <form action="/delete-project/{{project.id}}" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-danger">Delete Project</button>
+                    </form>
+                </div>
+            </div>
+        {{else}}
+            <p class="alert alert-warning">Project not found</p>
+        {{/if}}
+    </div>
+</body>
+</html>

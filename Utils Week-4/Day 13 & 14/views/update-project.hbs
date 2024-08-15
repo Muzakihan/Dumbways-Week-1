@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Project</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    {{> navbar}}
+
+    <div class="container mt-5">
+        <h1>Update Project</h1>
+        <form id="updateProjectForm" class="d-flex flex-column gap-2" method="post" action="/update-project/{{project.id}}" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="nameInput">Project Name</label>
+                <input type="text" id="nameInput" name="name" class="form-control" value="{{project.name}}" required />
+            </div>
+            <div class="form-row d-flex gap-2">
+                <div class="form-group col-md-6">
+                    <label for="startDateInput">Start Date</label>
+                    <input type="date" id="startDateInput" name="startDate" class="form-control" value="{{project.startDate}}" required />
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="endDateInput">End Date</label>
+                    <input type="date" id="endDateInput" name="endDate" class="form-control" value="{{project.endDate}}" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="descriptionInput">Description</label>
+                <textarea id="descriptionInput" name="description" class="form-control" rows="4" required>{{project.description}}</textarea>
+            </div>
+            <div class="form-group">
+                <label>Technologies</label>
+                <div class="form-group d-flex gap-2">
+                    {{#each technologies}}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="{{this}}" name="option" value="{{this}}" {{#if (includes project.technologies this)}}checked{{/if}} />
+                            <label class="form-check-label" for="{{this}}">{{this}}</label>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="form-group d-flex flex-column mt-2">
+                <label for="imageInput">Upload Image (optional)</label>
+                <input type="file" id="imageInput" name="image" accept="image/*" class="form-control-file mt-2" />
+                {{#if project.image}}
+                    <p><strong>Current Image:</strong></p>
+                    <img src="{{project.image}}" alt="Project Image" class="img-fluid" style="max-width: 300px; height: auto;" />
+                {{/if}}
+            </div>
+            <button type="submit" class="btn btn-dark btn-block text-light w-100 mt-2">Update</button>
+        </form>
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/contact-me">Contact Me</a>
+        </nav>
+    </div>
+</body>
+</html>

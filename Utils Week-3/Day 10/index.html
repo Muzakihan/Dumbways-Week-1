@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <nav class="d-flex justify-content-between align-items-center bg-white text-dark py-4 px-4 shadow">
+      <div class="d-flex align-items-center justify-content-between">
+        <img src="./assets/image/logo.png" alt="Logo" style="height: 40px" />
+        <div class="ms-4 d-flex align-items-center gap-4">
+          <a href="index.html" class="text-decoration-none text-dark">Home</a>
+          <a href="project.html" class="text-decoration-none text-dark">My Project</a>
+        </div>
+      </div>
+      <div class="d-flex items-center">
+        <div class="navbar__button">
+          <button class="btn btn-warning text-light">
+            <a href="contact.html" class="text-decoration-none text-dark">Contact Me</a>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div
+        class="d-flex gap-4 align-items-center border rounded align-items-center border-dark-subtle position-relative"
+        style="margin: 5.5rem; padding: 3rem"
+      >
+        <div
+          class="position-absolute top-0 end-0 p-2 bg-white d-flex gap-2 align-items-center m-2 rounded"
+          style="
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3),
+              inset 0 2px 4px rgba(0, 0, 0, 0.3);
+          "
+        >
+          <p class="m-0 fs-3">👋</p>
+          <div class="m-0">
+            <p class="m-0">Hello World!</p>
+          </div>
+        </div>
+        <div class="card-image__detail-project">
+          <div class="card-image__container-text">
+            <h4><u>Get to Know Me.</u></h4>
+            <p>
+              Hello! I'm Farhan Muzaki, a passionate
+              <span class="circle-sketch-highlight">Front-End Developer</span>
+              with a keen eye for design and
+              <span class="circle-sketch-highlight">UI/UX</span>. I blend
+              creativity with code to craft visually stunning and user-friendly
+              web experiences. Let's create something amazing together!
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut,
+              tempora! Cum ullam quis ipsam nam labore, aut optio provident harum
+              aspernatur aliquam tempore ex error accusantium sed eos iste qui.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              velit voluptates voluptatem, nulla est deleniti maxime nobis
+              architecto nostrum dicta fugit error alias iste vel tempora
+              obcaecati quo dolores sunt.
+            </p>
+          </div>
+          <div class="card-image__cta-button">
+            <button type="button" class="btn btn-dark w-25">
+              <a href="contact.html" class="text-decoration-none text-light">Contact</a>
+            </button>
+            <button type="button" class="btn btn-light w-30 border-2">
+              <a
+                href=""
+                class="d-flex align-items-center gap-2 text-decoration-none text-dark"
+                >Download CV <i class="fa-regular fa-download"></i
+              ></a>
+            </button>
+          </div>
+          <div class="my-4 d-flex gap-3">
+            <i class="fs-2 fa-brands fa-linkedin"></i>
+            <i class="fs-2 fa-brands fa-square-instagram"></i>
+            <i class="fs-2 fa-brands fa-square-twitter"></i>
+            <i class="fs-2 fa-brands fa-facebook"></i>
+          </div>
+        </div>
+        <div class="shadow rounded my-4">
+          <img
+            src="./assets/image/profile.jpg"
+            alt="profile image"
+            style="width: 450px"
+            class="rounded-top"
+          />
+          <div class="d-flex flex-column align-items-center rounded-bottom p-2">
+            <h4 class="m-0 fw-bolder">Farhan Muzaki</h4>
+            <p class="m-0">Front-End Developer</p>
+          </div>
+        </div>
+      </div>
+      <div id="cardProject" class="container mt-5">
+        <div class="row" id="projectCards"></div>
+      </div>
+    </main>
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Delete Confirmation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete this project?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" id="confirmDeleteBtn" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script>
+      let dataBlog = JSON.parse(localStorage.getItem("projects")) || [];
+      let deleteIndex = -1;
+
+      document.addEventListener("DOMContentLoaded", function () {
+        renderBlog();
+
+        // Ensure the modal is initialized properly
+        const confirmDeleteBtn = document.getElementById("confirmDeleteBtn");
+        if (confirmDeleteBtn) {
+          confirmDeleteBtn.addEventListener("click", function () {
+            if (deleteIndex >= 0) {
+              dataBlog.splice(deleteIndex, 1);
+              localStorage.setItem("projects", JSON.stringify(dataBlog));
+              renderBlog();
+              const deleteModal = bootstrap.Modal.getInstance(document.getElementById('deleteModal'));
+              if (deleteModal) {
+                deleteModal.hide();
+              }
+              deleteIndex = -1; // Reset deleteIndex
+            }
+          });
+        }
+      });
+
+      function renderBlog() {
+        const projectCards = document.getElementById("projectCards");
+        projectCards.innerHTML = "";
+
+        dataBlog.forEach((blog, index) => {
+          if (blog && blog.options) {
+            projectCards.innerHTML += `
+              <div class="col-md-4 cardProject-container mb-4">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="${blog.image}" alt="${blog.title}" />
+                  <div class="card-body">
+                    <h5 class="card-title">${blog.title}</h5>
+                    <p class="card-text">${blog.description}</p>
+                    <p class="card-text">Start Date: ${blog.startDate}</p>
+                    <p class="card-text">End Date: ${blog.endDate}</p>
+                    <div class="d-flex flex-wrap">
+                      ${blog.options.map(option => `<span class="badge bg-primary me-1">${option}</span>`).join("")}
+                    </div>
+                    <button class="btn btn-dark mt-2" onclick="editBlog(${index})">Edit</button>
+                    <button class="btn btn-danger mt-2" onclick="showDeleteModal(${index})">Delete</button>
+                  </div>
+                </div>
+              </div>
+            `;
+          } else {
+            console.error(`Blog or options is not defined for index ${index}`);
+          }
+        });
+      }
+
+      function editBlog(index) {
+        localStorage.setItem("editIndex", index);
+        window.location.href = "project.html";
+      }
+
+      function showDeleteModal(index) {
+        deleteIndex = index;
+        const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+        if (deleteModal) {
+          deleteModal.show();
+        } else {
+          console.error('Delete modal not found');
+        }
+      }
+    </script>
+  </body>
+</html>

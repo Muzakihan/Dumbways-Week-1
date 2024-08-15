@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add My Project</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    {{> navbar}}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mt-5 border border-0">
+                    <div class="card-body border border-0">
+                        <h2 class="mb-4 text-center">ADD MY PROJECT</h2>
+                        <form id="projectForm" class="d-flex flex-column gap-2" method="post" action="/add-project"
+                            enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="nameInput">Project Name</label>
+                                <input type="text" id="nameInput" name="name" class="form-control" required />
+                            </div>
+                            <div class="form-row d-flex gap-2">
+                                <div class="form-group col-md-6">
+                                    <label for="startDateInput">Start Date</label>
+                                    <input type="date" id="startDateInput" name="startDate" class="form-control"
+                                        required />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="endDateInput">End Date</label>
+                                    <input type="date" id="endDateInput" name="endDate" class="form-control" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="descriptionInput">Description</label>
+                                <textarea id="descriptionInput" name="description" class="form-control" rows="4"
+                                    required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Technologies</label>
+                                <div class="form-group d-flex gap-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="nodeJs" name="option"
+                                            value="Node Js" />
+                                        <label class="form-check-label" for="nodeJs">Node Js</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="reactJs" name="option"
+                                            value="React Js" />
+                                        <label class="form-check-label" for="reactJs">React Js</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="nextJs" name="option"
+                                            value="Next Js" />
+                                        <label class="form-check-label" for="nextJs">Next Js</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="typescript" name="option"
+                                            value="TypeScript" />
+                                        <label class="form-check-label" for="typescript">TypeScript</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group d-flex flex-column mt-2">
+                                <label for="imageInput">Upload Image</label>
+                                <input type="file" id="imageInput" name="image" accept="image/*"
+                                    class="form-control-file mt-2" required />
+                            </div>
+                            <button type="submit" class="btn btn-dark btn-block text-light w-100 mt-2">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

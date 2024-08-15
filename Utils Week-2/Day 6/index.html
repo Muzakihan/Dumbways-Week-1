@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Creating Card || Week 1</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar__right">
+          <div class="navbar__logo">
+              <img src="./assets/image/logo.png" alt="Logo">
+          </div>
+          <div class="navbar__links">
+            <div class="navigation-links">
+              <a href="index.html" class="navbar__link">Home</a>
+              <a href="contact.html" class="navbar__link">Contact</a>
+            </div>
+              <a href=""><button class="navbar__button__contact">Contact Me</button></a>
+          </div>
+      </div>
+      <div class="navbar__left">
+              <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+              </a>
+          </div>
+      </div>
+  </nav>
+    <div class="card-container">
+      <div class="card__header-text">
+        <h2>Hello Welcome to my hut</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+          expedita provident accusamus doloremque nihil molestiae eveniet
+          excepturi odio aut similique rem, corrupti, adipisci, ad magni nulla
+          explicabo. Nobis, ullam officia.
+        </p>
+      </div>
+      <div class="card__cta-button">
+        <a href="contact.html" class="contact-link">Contact</a>
+        <a href="" class="download-link">Download CV <i class="fa-regular fa-download"></i
+        ></a>
+      </div>
+      <div class="card__icon-social">
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-square-instagram"></i>
+        <i class="fa-brands fa-square-twitter"></i>
+        <i class="fa-brands fa-facebook"></i>
+      </div>
+      <div class="card__profile">
+        <div class="card__profile-image">
+            <img src="./assets/image/profile.jpg" alt="" "/>
+        </div>
+        <div class="card__profile-detail">
+          <h2>Farhan Muzaki</h2>
+          <p>Front-End Developer</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function myFunction() {
+  const navbarLinks = document.querySelector('.navbar__links');
+  const navbarButton = document.querySelector('.navbar__button button');
+
+  navbarLinks.classList.toggle('show');
+  navbarButton.classList.toggle('show');
+}
+
+  </script>
+  
+</html>

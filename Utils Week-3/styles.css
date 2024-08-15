@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root {
+    --bg-left: #ffffff;
+    --bg-right: #ffffff;
+    --text-color: #000000;
+    --text-color-secondary: #515151;
+    --scrollbar-track: #ffffff;
+    --scrollbar-thumb: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+
+nav {
+    flex: 1 0 20%;
+    font-family: 'Roboto', sans-serif;
+}
+nav h1{
+    font-size: 45px;
+}
+.column-button button {
+    padding: 5px 10px;
+    background-color: var(--scrollbar-thumb);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.column-button button a{
+    text-decoration: none;
+    font-size: 15px;
+    color: var(--scrollbar-track);
+}
+
+.column-button button:hover {
+    background-color: var(--scrollbar-thumb);
+    color: var(--bg-right);
+}
+
+#projects-container {
+    display: flex; /* Atur kontainer sebagai flexbox */
+    flex-wrap: wrap; /* Izinkan elemen membungkus ke baris berikutnya */
+    gap: 20px; /* Ruang antar item */
+  }
+
+  #projects-container > div {
+    flex: 1 1 calc(33.33% - 20px); /* 3 kolom pada layar besar */
+    height: 200px; /* Atur tinggi tetap untuk semua kartu */
+    box-sizing: border-box; /* Menghitung padding dan border dalam ukuran total */
+  }
+
+  @media (max-width: 768px) {
+    #projects-container > div {
+      flex: 1 1 calc(50% - 20px); /* 2 kolom pada layar menengah */
+    }
+  }
+
+  @media (max-width: 576px) {
+    #projects-container > div {
+      flex: 1 1 100%; /* 1 kolom pada layar kecil */
+    }
+  }
+
+  .project-title {
+    height: 50px; /* Atur tinggi tetap untuk judul proyek */
+    overflow: hidden; /* Sembunyikan teks yang terlalu panjang */
+    text-overflow: ellipsis; /* Tampilkan ellipsis jika teks terlalu panjang */
+    white-space: nowrap; /* Jangan izinkan teks membungkus */
+  }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex: 1 0 25%;
+    }
+
+    main{
+        flex: 1 0 50%;
+    }
+
+    footer {
+        flex: 1 0 25%;
+    }
+}

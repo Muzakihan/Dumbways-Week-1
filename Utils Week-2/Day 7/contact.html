@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <title>Project</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar__right">
+          <div class="navbar__logo">
+              <img src="./assets/image/logo.png" alt="Logo">
+          </div>
+          <div class="navbar__links">
+            <div class="navigation-links">
+              <a href="index.html" class="navbar__link">Home</a>
+              <a href="contact.html" class="navbar__link">Contact</a>
+              <a href="testimonial.html" class="navbar__link">Testimonials</a>
+            </div>
+              <a href=""><button class="navbar__button__contact">Contact Me</button></a>
+          </div>
+      </div>
+      <div class="navbar__left">
+              <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+              </a>
+          </div>
+      </div>
+  </nav>
+    <div class="form">
+      <h2 class="form__title">ADD MY PROJECT</h2>
+      <form class="form__fields" id="projectForm">
+        <div class="form__field">
+          <label for="nameInput" class="form__label">Project Name</label>
+          <input
+            type="text"
+            id="nameInput"
+            name="name"
+            class="form__input"
+            required
+          />
+        </div>
+        <div class="form__field2">
+          <div class="form__field-date">
+            <label for="startDateInput" class="form__label">Start Date</label>
+            <input
+              type="date"
+              id="startDateInput"
+              name="startDate"
+              class="form__input"
+              required
+            />
+          </div>
+          <div class="form__field-date">
+            <label for="endDateInput" class="form__label">End Date</label>
+            <input
+              type="date"
+              id="endDateInput"
+              name="endDate"
+              class="form__input"
+              required
+            />
+          </div>
+        </div>
+        <div class="form__field">
+          <label for="descriptionInput" class="form__label">Description</label>
+          <textarea
+            id="descriptionInput"
+            name="description"
+            class="form__textarea"
+            rows="4"
+          ></textarea>
+        </div>
+        <div class="form__field">
+          <div class="form__field-option">
+            <div class="field__option-field">
+              <input
+                type="checkbox"
+                id="nodeJs"
+                name="option"
+                value="Node Js"
+              />
+              <label for="nodeJs">Node Js</label>
+            </div>
+            <div class="field__option-field">
+              <input
+                type="checkbox"
+                id="reactJs"
+                name="option"
+                value="React Js"
+              />
+              <label for="reactJs">React Js</label>
+            </div>
+            <div class="field__option-field">
+              <input
+                type="checkbox"
+                id="nextJs"
+                name="option"
+                value="Next Js"
+              />
+              <label for="nextJs">Next Js</label>
+            </div>
+            <div class="field__option-field">
+              <input
+                type="checkbox"
+                id="typescript"
+                name="option"
+                value="TypeScript"
+              />
+              <label for="typescript">TypeScript</label>
+            </div>
+          </div>
+        </div>
+        <div id="techIcons"></div>
+        <div class="form__field">
+          <input
+            type="file"
+            id="imageInput"
+            name="image"
+            accept="image/*"
+            required
+          />
+        </div>
+        <button type="submit" class="form__button">Submit</button>
+      </form>
+    </div>
+    <div id="cardProject"></div>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
